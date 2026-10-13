@@ -1,0 +1,21 @@
+# Ultralytics YOLO PPE Safety Detection Dataset Configuration
+# Format: YOLO standard (images and labels subfolders)
+
+path: ./data/ppe_dataset # dataset root dir
+train: images/train      # train images (relative to 'path')
+val: images/val          # val images (relative to 'path')
+test: images/test        # test images (optional)
+
+# Number of classes
+nc: 5
+
+# Class names
+names:
+  0: helmet        # Compliant: Hardhat / Safety Helmet
+  1: no_helmet     # Violation: Bare head in danger zone
+  2: vest          # Compliant: High-visibility reflective vest
+  3: no_vest       # Violation: Missing safety vest
+  4: person        # Worker / Site personnel
+
+# Annotation format:
+# <class_id> <x_center> <y_center> <width> <height> (normalized between 0 and 1)
